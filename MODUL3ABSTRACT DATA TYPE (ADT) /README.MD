@@ -138,12 +138,11 @@ int main() {
 
 ```
 #### Output:
+<img width="527" height="655" alt="Image" src="https://github.com/user-attachments/assets/fe1ffb57-0c35-404f-8412-c4113e608acc" />
 
-Kode di atas berfungsi untuk menghitung hasil dari dua bilangan yang dimasukkan oleh pengguna. Setelah pengguna mengetikkan dua angka, program akan menampilkan hasil penjumlahan, pengurangan, perkalian, dan pembagiannya. Semua proses tersebut ditampilkan langsung di layar menggunakan perintah `cout`.
-
+Program pada soal ini bertujuan untuk menyimpan data mahasiswa dengan jumlah maksimal sepuluh orang menggunakan sebuah array berisi elemen-elemen bertipe struct. Setiap data mahasiswa memiliki beberapa field, yaitu nama, NIM, nilai UTS, nilai UAS, nilai tugas, dan nilai akhir. Untuk menghitung nilai akhir, program membutuhkan sebuah fungsi khusus, yang menerima nilai UTS, UAS, dan tugas sebagai parameter, lalu mengolahnya berdasarkan rumus 0.3 × UTS + 0.4 × UAS + 0.3 × tugas.
 
 #### Full code Screenshot:
-<img width="679" height="426" alt="image" src="https://github.com/user-attachments/assets/734dbdcd-69a4-454e-9a9f-82a2caad45f5" />
 
 ### 2. [Soa2]
 
