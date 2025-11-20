@@ -163,8 +163,9 @@ pelajaran create_pelajaran(string namapel, string kodepel);
 void tampil_pelajaran(pelajaran pel);
 
 #endif
-
+```
 *pelajaran.cpp*
+
 ```C++
 #include <iostream>
 #include "pelajaran.h"
@@ -181,9 +182,11 @@ void tampil_pelajaran(pelajaran pel){
     cout << "nama pelajaran : " << pel.namaMapel << endl;
     cout << "nilai : " << pel.kodeMapel << endl;
 }
-
+```
 *main.cpp*
+
 ```C++
+
 #include <iostream>
 #include "pelajaran.h"
 using namespace std;
@@ -201,6 +204,7 @@ int main(){
 
 ```
 #### Output:
+<img width="366" height="132" alt="Image" src="https://github.com/user-attachments/assets/1f85085c-e319-43f0-adb3-edd4154f8bd9" />
 
 #### Full code Screenshot:
 <img width="1144" height="757" alt="image" src="https://github.com/user-attachments/assets/0a9be719-9de9-4971-9aa9-e9c58dafd3fe" />
