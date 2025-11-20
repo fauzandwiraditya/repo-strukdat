@@ -143,46 +143,64 @@ int main() {
 Program pada soal ini bertujuan untuk menyimpan data mahasiswa dengan jumlah maksimal sepuluh orang menggunakan sebuah array berisi elemen-elemen bertipe struct. Setiap data mahasiswa memiliki beberapa field, yaitu nama, NIM, nilai UTS, nilai UAS, nilai tugas, dan nilai akhir. Untuk menghitung nilai akhir, program membutuhkan sebuah fungsi khusus, yang menerima nilai UTS, UAS, dan tugas sebagai parameter, lalu mengolahnya berdasarkan rumus 0.3 × UTS + 0.4 × UAS + 0.3 × tugas.
 
 #### Full code Screenshot:
-
+<img width="674" height="908" alt="Image" src="https://github.com/user-attachments/assets/c7fe4681-564a-4a65-88d1-fe865dac866e" />
 ### 2. [Soa2]
 
+*pelajaran.h*
 ```C++
-#include <iostream>
+#ifndef PELAJARAN_H_INCLUDED
+#define PELAJARAN_H_INCLUDED
+
+#include <string>
 using namespace std;
 
-int main() {
-    int angka;
-    cout <<"masukkan angka (0 - 100): ";
-    cin >> angka;
+struct pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
 
-    cout << angka << " : ";
+pelajaran create_pelajaran(string namapel, string kodepel);
+void tampil_pelajaran(pelajaran pel);
 
-    if (angka == 0 ) cout << "Nol";
-    else if (angka == 100 ) cout << "Seratus";
-    else {
-        string satuan[] = {"", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan"};
-        int puluh = angka / 10;
-        int satu = angka % 10;
+#endif
 
-        if (angka < 10) cout << satuan[satu];
-        else if (angka < 20){
-            if (angka == 10) cout << "Sepuluh";
-            else if (angka == 11) cout << "Sebelas";
-            else cout << satuan[satu] << " Belas";
-        }
-        else {
-            cout << satuan[puluh] << " Puluh";
-            if (satu > 0) cout << " " << satuan[satu];
-        }
-        
-    }
-    cout << endl;
+*pelajaran.cpp*
+```C++
+#include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+pelajaran create_pelajaran(string namapel, string kodepel){
+    pelajaran p;
+    p.namaMapel = namapel;
+    p.kodeMapel = kodepel;
+    return p;
+}
+
+void tampil_pelajaran(pelajaran pel){
+    cout << "nama pelajaran : " << pel.namaMapel << endl;
+    cout << "nilai : " << pel.kodeMapel << endl;
+}
+
+*main.cpp*
+```C++
+#include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+int main(){
+    string namapel = "Struktur Data";
+    string kodepel = "STD";
+
+    pelajaran pel = create_pelajaran(namapel, kodepel);
+
+    tampil_pelajaran(pel);
+
     return 0;
 }
+
 ```
 #### Output:
-<img width="498" height="88" alt="image" src="https://github.com/user-attachments/assets/9f180cfe-4ab2-4dd7-926b-57466db8fbff" />
-Kode di atas digunakan untuk mengubah angka yang dimasukkan pengguna menjadi bentuk tulisan. Saat program dijalankan, pengguna diminta mengetikkan angka antara 0 sampai 100. Setelah itu, program akan menampilkan hasilnya dalam bentuk kata, misalnya jika memasukkan angka 45 maka akan muncul “Empat Puluh Lima”. Prosesnya dilakukan dengan membagi angka menjadi puluhan dan satuan, lalu menyesuaikan hasilnya menggunakan kondisi `if` dan `else if` agar kata yang muncul sesuai dengan angkanya.
 
 #### Full code Screenshot:
 <img width="1144" height="757" alt="image" src="https://github.com/user-attachments/assets/0a9be719-9de9-4971-9aa9-e9c58dafd3fe" />
