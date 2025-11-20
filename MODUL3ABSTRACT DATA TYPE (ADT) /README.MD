@@ -9,7 +9,8 @@ Abstract Data Type (ADT), yaitu sebuah tipe data yang didefinisikan berdasarkan 
 
 ### 1. [Code mahasiswa.h]
 
-``` Code mahasiswa.h
+*Code mahasiswa.h*
+```C++
 #ifndef MAHASISWA_H_INCLUDED 
 #define MAHASISWA_H_INCLUDED 
 
