@@ -7,7 +7,7 @@
 Abstract Data Type (ADT), yaitu sebuah tipe data yang didefinisikan berdasarkan apa yang bisa dilakukan, bukan bagaimana cara ia disimpan atau diimplementasikan. ADT terdiri dari dua bagian utama: TYPE (struktur data) dan PRIMITIF (operasi-operasi dasar) yang boleh dilakukan terhadap tipe tersebut. ADT bersifat statik, artinya hanya menjelaskan spesifikasi dan aturan sebuah tipe, bukan implementasinya.
 ## Guided 
 
-### 1. [pengenalan bahasa C++ (1)]
+### 1. [Code mahasiswa.h]
 
 ``` Code mahasiswa.h
 #ifndef MAHASISWA_H_INCLUDED 
