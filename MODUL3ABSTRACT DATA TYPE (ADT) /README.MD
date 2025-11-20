@@ -212,50 +212,86 @@ int main(){
 <img width="668" height="437" alt="Image" src="https://github.com/user-attachments/assets/ffe7dcbb-02a7-46e3-abb4-613f6e2ba164" />
 <img width="682" height="454" alt="Image" src="https://github.com/user-attachments/assets/d2297998-7411-4227-9177-895c4321935f" />
 <img width="646" height="406" alt="Image" src="https://github.com/user-attachments/assets/09d19a57-013c-48ee-b2b8-8853ce9c8e33" />
+
+
 ### 3. [Soa3]
 
 ```C++
 #include <iostream>
 using namespace std;
 
-int main() {
-    int n;
-    cout << "Input: ";
-    cin >> n;
-    cout << "Output:\n";
-
-    for (int i = n; i >= 1; i--) {
-    
-        for (int s = 0; s < (n - i) * 2; s++)
-            cout << " ";
-
-
-        for (int j = i; j >= 1; j--)
-            cout << j << " ";
-
-        cout << "* ";
-
-        for (int j = 1; j <= i; j++)
-            cout << j << " ";
-
+void tampilArray(int A[3][3]){
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            cout << A[i][j] << " ";
+        }
         cout << endl;
     }
+}
+
+void tukarPosisi(int A[3][3], int B[3][3], int x, int y){
+    int temp = A[x][y];
+    A[x][y] = B[x][y];
+    B[x][y] = temp;
+}
+
+void tukarPointer(int *p1, int *p2){
+    int temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+
+int main(){
+    int arr1[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    int arr2[3][3] = {
+        {10, 11, 12},
+        {13, 14, 15},
+        {16, 17, 18}
+    };
+
+    int a = 50;
+    int b = 99;
+    int *p1 = &a;
+    int *p2 = &b;
+
+    cout << "Array 1 awal:\n";
+    tampilArray(arr1);
+    cout << "\nArray 2 awal:\n";
+    tampilArray(arr2);
+
+    cout << "\nMenukar posisi (1,1) pada kedua array...\n";
+    tukarPosisi(arr1, arr2, 1, 1);
+
+    cout << "Array 1 setelah ditukar:\n";
+    tampilArray(arr1);
+    cout << "\nArray 2 setelah ditukar:\n";
+    tampilArray(arr2);
+
+    cout << "\nNilai pointer sebelum ditukar: p1=" << *p1 << ", p2=" << *p2 << endl;
+    tukarPointer(p1, p2);
+    cout << "Nilai pointer sesudah ditukar:  p1=" << *p1 << ", p2=" << *p2 << endl;
 
     return 0;
 }
+
 ```
 #### Output:
-<img width="513" height="337" alt="image" src="https://github.com/user-attachments/assets/42ec5ef2-40ce-4ad5-9bbe-28e16d6f3429" />
-Kode di atas digunakan untuk menampilkan pola angka berbentuk segitiga terbalik dengan tanda bintang di tengahnya. Program meminta pengguna memasukkan sebuah angka sebagai batas tinggi pola. Kemudian, melalui perulangan `for`, program mencetak angka menurun dari nilai input hingga 1 di sisi kiri, menampilkan tanda `*` di tengah, lalu mencetak angka naik kembali di sisi kanan. Setiap baris bergeser ke kanan dengan menambahkan spasi agar pola terlihat rapi dan simetris.
+<img width="602" height="564" alt="Image" src="https://github.com/user-attachments/assets/776a682e-5c26-406d-8df1-6cb90cf937f2" />
+
+Program ini bekerja dengan tiga bagian utama: menampilkan array 2D, menukar elemen tertentu dari dua array, dan menukar nilai dua variabel melalui pointer. Pada bagian awal, program mendefinisikan fungsi tampilArray yang bertugas mencetak isi sebuah array 3×3 ke layar dengan format baris dan kolom sehingga isi matriks terlihat rapi. Berikutnya ada fungsi tukarPosisi, yang menerima dua array dan sebuah indeks baris serta kolom. Fungsi ini akan mengambil elemen pada posisi yang sama dari kedua array, kemudian menukarnya menggunakan variabel sementara. Dengan cara itu, elemen pada indeks tersebut tertukar tanpa mengubah elemen lain.
 
 #### Full code Screenshot:
-<img width="525" height="676" alt="image" src="https://github.com/user-attachments/assets/e2c8b71b-813a-48d5-a0c9-b4a644ecde03" />
-
+<img width="678" height="897" alt="Image" src="https://github.com/user-attachments/assets/3bf730c1-bee0-4cdf-9ea9-ef517fcc2dbb" />
 
 ## Kesimpulan
-Dari ketiga program di atas, bisa disimpulkan bahwa setiap kode memiliki fungsi berbeda tapi sama-sama membantu memahami dasar logika pemrograman C++. Program pertama mengajarkan cara melakukan operasi aritmatika sederhana dengan input dari pengguna. Program kedua memperkenalkan penggunaan percabangan `if` untuk menampilkan hasil dalam bentuk tulisan sesuai angka yang dimasukkan. Sedangkan program ketiga menunjukkan penerapan perulangan `for` untuk membuat pola angka yang menarik dan terstruktur. Dari ketiganya, bisa dipahami bahwa logika, struktur, serta alur berpikir dalam menyusun kode sangat penting agar program bisa berjalan sesuai yang diinginkan.
-
+Secara keseluruhan, program ini menunjukkan penerapan dasar manipulasi data menggunakan array 2D dan pointer dalam C++. Dua buah array berukuran 3×3 digunakan sebagai contoh untuk memperlihatkan bagaimana elemen-elemen di dalamnya dapat ditampilkan dengan rapi dan ditukar pada posisi tertentu melalui sebuah fungsi khusus.
 ## Referensi
-GeeksforGeeks. (n.d.). C++ Arithmetic Operators. Diakses pada 23 Oktober 2025, dari https://www.geeksforgeeks.org/cpp/cpp-arithmetic-operators/
-PrepInsta. (n.d.). C++ program to convert digit number to words. Diakses pada 23 Oktober 2025, dari https://prepinsta.com/cpp-program/convert-digit-number-to-words/
-Programiz. (n.d.). C++ Programs to Create Pyramid and Pattern. Diakses pada 23 Oktober 2025, dari https://www.programiz.com/cpp-programming/examples/pyramid-pattern
+https://cplusplus.com/doc/tutorial/structures/
+https://cplusplus.com/doc/tutorial/functions2/
+https://cplusplus.com/doc/tutorial/arrays/
+
