@@ -24,7 +24,7 @@ float rata2(mahasiswa m);
 
 #endif
 }
-
+```
 *code mahasiswa.cpp*
 ```C++
 #include <iostream>
