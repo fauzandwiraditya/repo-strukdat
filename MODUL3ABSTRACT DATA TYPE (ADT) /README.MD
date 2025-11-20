@@ -144,6 +144,8 @@ Program pada soal ini bertujuan untuk menyimpan data mahasiswa dengan jumlah mak
 
 #### Full code Screenshot:
 <img width="674" height="908" alt="Image" src="https://github.com/user-attachments/assets/c7fe4681-564a-4a65-88d1-fe865dac866e" />
+
+
 ### 2. [Soa2]
 
 *pelajaran.h*
@@ -207,8 +209,9 @@ int main(){
 <img width="366" height="132" alt="Image" src="https://github.com/user-attachments/assets/1f85085c-e319-43f0-adb3-edd4154f8bd9" />
 
 #### Full code Screenshot:
-<img width="1144" height="757" alt="image" src="https://github.com/user-attachments/assets/0a9be719-9de9-4971-9aa9-e9c58dafd3fe" />
-
+<img width="668" height="437" alt="Image" src="https://github.com/user-attachments/assets/ffe7dcbb-02a7-46e3-abb4-613f6e2ba164" />
+<img width="682" height="454" alt="Image" src="https://github.com/user-attachments/assets/d2297998-7411-4227-9177-895c4321935f" />
+<img width="646" height="406" alt="Image" src="https://github.com/user-attachments/assets/09d19a57-013c-48ee-b2b8-8853ce9c8e33" />
 ### 3. [Soa3]
 
 ```C++
