@@ -24,6 +24,23 @@ float rata2(mahasiswa m);
 
 #endif
 }
+
+*code mahasiswa.cpp*
+```C++
+#include <iostream>
+#include "mahasiswa.h"
+void inputMhs(mahasiswa &m){ 
+    cout << "input nama = "; 
+    cin >> (m).nim; 
+    cout << "input nilai = "; 
+    cin >> (m).nilai1; 
+    cout << "input nilai2 = "; 
+    cin >> (m).nilai2;
+} 
+ 
+float rata2(mahasiswa m){ 
+  return float(m.nilai1+m.nilai2)/2; 
+}
 ```
 Kode di atas digunakan untuk menampilkan beberapa baris teks ke layar sesuai jumlah yang dimasukkan oleh pengguna. Program meminta input berupa jumlah baris, kemudian memanggil fungsi `tulis()` untuk mencetak kalimat “Baris ke -” diikuti nomor urutnya. Proses pencetakan dilakukan menggunakan perulangan `for` dan perintah `cout` untuk menampilkan hasilnya di layar.
 
