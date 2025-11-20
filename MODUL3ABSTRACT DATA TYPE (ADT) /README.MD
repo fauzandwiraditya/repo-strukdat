@@ -75,34 +75,70 @@ float rata2(mahasiswa m){
 return float(m.nilai1+m.nilai2)/2; 
 }
 ```
-Kode di atas digunakan untuk menampilkan beberapa baris teks ke layar sesuai jumlah yang dimasukkan oleh pengguna. Program meminta input berupa jumlah baris, kemudian memanggil fungsi `tulis()` untuk mencetak kalimat “Baris ke -” diikuti nomor urutnya. Proses pencetakan dilakukan menggunakan perulangan `for` dan perintah `cout` untuk menampilkan hasilnya di layar.
-
+Program tersebut membuat sebuah struktur mahasiswa yang berisi NIM, nilai pertama, dan nilai kedua. Fungsi inputMhs() digunakan untuk meminta input dari pengguna dan mengisi data mahasiswa tersebut. Fungsi rata2() menghitung rata-rata dari dua nilai yang dimasukkan. Di dalam main(), program membuat satu objek mahasiswa, meminta pengguna mengisi datanya melalui inputMhs(), lalu menampilkan hasil rata-ratanya dengan memanggil rata2(). Program ini pada dasarnya hanya untuk menerima data mahasiswa dan menghitung nilai rata-ratanya.
 ## Unguided 
 
 ### 1. [Soal]
 
 ```C++
 #include <iostream>
-
+#include <string>
 using namespace std;
 
+struct Mahasiswa {
+    string nama;
+    string nim;
+    float uts, uas, tugas, nilaiAkhir;
+};
+
+float hitungNilaiAkhir(float uts, float uas, float tugas) {
+    return (0.3 * uts) + (0.4 * uas) + (0.3 * tugas);
+}
+
 int main() {
-    float bilangan1, bilangan2;
+    Mahasiswa mhs[10];
+    int jumlah;
 
-    cout <<"Masukkan bilangan pertama: ";
-    cin >> bilangan1;
-    cout<<"Masukkan bilangan kedua: ";
-    cin >> bilangan2;
+    cout << "Masukkan jumlah mahasiswa (max 10): ";
+    cin >> jumlah;
 
-    cout<<"Hasil penjumlahan: "<< bilangan1 + bilangan2 << endl;
-    cout<<"Hasil pengurangan: "<< bilangan1 - bilangan2 << endl;
-    cout<<"Hasil perkalian: "<< bilangan1 * bilangan2 << endl;
-    cout<<"Hasil pembagian: "<< bilangan1 / bilangan2 << endl;
+    if(jumlah > 10) jumlah = 10;
+
+    for(int i = 0; i < jumlah; i++) {
+        cout << "\nData mahasiswa ke-" << i+1 << endl;
+
+        cout << "Nama  : ";
+        cin >> mhs[i].nama;
+
+        cout << "NIM   : ";
+        cin >> mhs[i].nim;
+
+        cout << "UTS   : ";
+        cin >> mhs[i].uts;
+
+        cout << "UAS   : ";
+        cin >> mhs[i].uas;
+
+        cout << "Tugas : ";
+        cin >> mhs[i].tugas;
+
+        mhs[i].nilaiAkhir = hitungNilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
+    }
+
+    cout << "\n=== DATA MAHASISWA ===\n";
+    for(int i = 0; i < jumlah; i++) {
+        cout << "\nMahasiswa " << i+1 << endl;
+        cout << "Nama        : " << mhs[i].nama << endl;
+        cout << "NIM         : " << mhs[i].nim << endl;
+        cout << "Nilai Akhir : " << mhs[i].nilaiAkhir << endl;
+    }
+
     return 0;
 }
+
 ```
 #### Output:
-<img width="503" height="177" alt="image" src="https://github.com/user-attachments/assets/18dea020-cd26-4fe4-ae4c-e4a671f7366e" />
+
 Kode di atas berfungsi untuk menghitung hasil dari dua bilangan yang dimasukkan oleh pengguna. Setelah pengguna mengetikkan dua angka, program akan menampilkan hasil penjumlahan, pengurangan, perkalian, dan pembagiannya. Semua proses tersebut ditampilkan langsung di layar menggunakan perintah `cout`.
 
 
